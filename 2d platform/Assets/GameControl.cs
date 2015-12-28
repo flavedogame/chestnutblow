@@ -24,6 +24,8 @@ public class GameControl : MonoBehaviour {
         score = 0;
         UpdateScore();
         StartCoroutine(SpawnWaves());
+
+       
     }
 
     void Update()
@@ -38,11 +40,25 @@ public class GameControl : MonoBehaviour {
         {
             for (int i = 0; i < hazardCount; i++)
             {
-                GameObject hazard = hazards[Random.Range(0, hazards.Length)];
-                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), spawnValues.y, spawnValues.z);
-                Quaternion spawnRotation = Quaternion.identity;
-                //make a pool
-                Instantiate(hazard, spawnPosition, spawnRotation);
+                int hazardType = Random.Range(0, hazards.Length);
+                GameObject hazard = hazards[hazardType];
+
+                if (hazardType == 0)
+                {
+                    Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), -spawnValues.y, spawnValues.z);
+                    Quaternion spawnRotation = Quaternion.identity;
+                    //make a pool
+                    Instantiate(hazard, spawnPosition, spawnRotation);
+                }
+                else //bird 
+                {
+                    Vector3 spawnPosition = new Vector3(-spawnValues.x, Random.Range(-spawnValues.y, spawnValues.y), spawnValues.z);
+                    Quaternion spawnRotation = Quaternion.identity;
+                    //make a pool
+                    Instantiate(hazard, spawnPosition, spawnRotation);
+                }
+
+                
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(waveWait);

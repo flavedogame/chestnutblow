@@ -28,7 +28,7 @@ GameObject:
   - 61: {fileID: 6152524}
   - 114: {fileID: 11413522}
   m_Layer: 12
-  m_Name: twig
+  m_Name: bird
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 196592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c29ec82749802e04e8b40b150669123e, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ed374f77ca4b4f4c9d9dd80a541e750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &21299974
