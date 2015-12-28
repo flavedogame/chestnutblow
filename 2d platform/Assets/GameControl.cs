@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//MainGame GameController
 public class GameControl : MonoBehaviour {
 
     public GameObject[] hazards;
