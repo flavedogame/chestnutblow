@@ -802,7 +802,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 0
+  m_GravityScale: .0199999996
   m_IsKinematic: 0
   m_Interpolate: 1
   m_SleepingMode: 1
@@ -1573,7 +1573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 5
+  m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
@@ -2407,8 +2407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hazards:
-  - {fileID: 196592, guid: b10bacded684cc34c81b978d4dcb06c3, type: 2}
-  - {fileID: 196592, guid: fa86db4345f04014ba7142acbbfbc810, type: 2}
+  - {fileID: 171360, guid: 079d0088efe30194eaf8bc9d268a5dbd, type: 2}
   spawnValues: {x: 3, y: 6, z: 0}
   hazardCount: 10
   spawnWait: 2
