@@ -19,7 +19,7 @@ public class TouchInput : MonoBehaviour {
            // Instantiate(windPrefab, mousePosition, Quaternion.identity);
             Vector3 chestnutPosition =  Camera.main.WorldToScreenPoint(chestnutGo.transform.position);
             //Debug.Log(chestnutPosition + " "+ mousePosition);
-            chestnutGo.GetComponent<Rigidbody2D>().AddForce( (chestnutPosition - mousePosition).normalized * Time.deltaTime*115f);
+            chestnutGo.GetComponent<Rigidbody2D>().AddForce( (chestnutPosition - mousePosition) * Time.deltaTime*0.5f);
 
         }
 
@@ -29,7 +29,7 @@ public class TouchInput : MonoBehaviour {
             // Instantiate(windPrefab, mousePosition, Quaternion.identity);
             Vector3 chestnutPosition = Camera.main.WorldToScreenPoint(chestnutGo.transform.position);
            // Debug.Log(chestnutPosition + " " + mousePosition);
-            chestnutGo.GetComponent<Rigidbody2D>().AddForce((chestnutPosition - mousePosition).normalized * Time.deltaTime * 115f);
+            chestnutGo.GetComponent<Rigidbody2D>().AddForce((chestnutPosition - mousePosition) * Time.deltaTime * 0.5f);
         }
 	}
 }
