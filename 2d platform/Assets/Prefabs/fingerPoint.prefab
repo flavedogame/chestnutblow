@@ -15,7 +15,7 @@ GameObject:
   - 114: {fileID: 11431670}
   m_Layer: 0
   m_Name: fingerPoint
-  m_TagString: Untagged
+  m_TagString: FingerPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,6 +77,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chestnutGo: {fileID: 0}
   fingerPointPrefab: {fileID: 0}
+  isActive: 0
+  flipActive: 0
+  mousePosition: {x: 0, y: 0, z: 0}
 --- !u!114 &11431670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -149,6 +152,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: FingerPoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
