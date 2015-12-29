@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class chestnutNetworkMove : MonoBehaviour {
+public class chestnutNetworkMove : NetworkBehaviour {
 
     private GameObject myPlayer;
     private GameObject otherPlayer;//can be multi 
+
+
 
 
 	// Use this for initialization
@@ -14,6 +17,14 @@ public class chestnutNetworkMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (isServer)
+        {
+            pushChestnut();
+        }
+	}
+
+    [Server]
+    public void pushChestnut() {
         //ehh,nasty
         if (otherPlayer == null)
         {
@@ -25,21 +36,28 @@ public class chestnutNetworkMove : MonoBehaviour {
                 otherPlayer = go[1];
             }
         }
-        else {
+        else
+        {
             Vector3 chestnutPosition = Camera.main.WorldToScreenPoint(transform.position);
             // Debug.Log(chestnutPosition + " " + mousePosition);
             Vector3 force = Vector3.zero;
             if (myPlayer.GetComponent<TouchInput>().isActive)
             {
                 Debug.Log("my player is active");
-                 force= (chestnutPosition - myPlayer.GetComponent<TouchInput>().mousePosition).normalized;
+                force = (chestnutPosition -Camera.main.WorldToScreenPoint( myPlayer.GetComponent<TouchInput>().transform.position)).normalized;
             }
             if (otherPlayer.GetComponent<TouchInput>().isActive)
             {
-                force += ((chestnutPosition - otherPlayer.GetComponent<TouchInput>().mousePosition).normalized);
+                force += ((chestnutPosition - Camera.main.WorldToScreenPoint(otherPlayer.GetComponent<TouchInput>().transform.position)).normalized);
             }
             GetComponent<Rigidbody2D>().AddForce(force * Time.deltaTime * 115f);
-        
+
         }
-	}
+        RpcPushChestnut(transform.position);
+    }
+
+    [ClientRpc]
+    public void RpcPushChestnut(Vector3 pos) {
+        transform.position = pos;
+    }
 }
