@@ -3,7 +3,6 @@ using System.Collections;
 
 public class TouchInput : MonoBehaviour {
 
-    public GameObject windPrefab;
     public GameObject chestnutGo;
 
     public GameObject fingerPointPrefab;
@@ -12,7 +11,8 @@ public class TouchInput : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        fingerPointPrefab = gameObject;
+        chestnutGo = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame

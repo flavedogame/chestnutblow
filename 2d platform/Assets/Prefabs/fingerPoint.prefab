@@ -9,6 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 483832}
   - 212: {fileID: 21294716}
+  - 114: {fileID: 11410092}
+  - 114: {fileID: 11427908}
+  - 114: {fileID: 11467820}
+  - 114: {fileID: 11431670}
   m_Layer: 0
   m_Name: fingerPoint
   m_TagString: Untagged
@@ -23,11 +27,80 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 161510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.07000005, y: 0, z: 0}
+  m_LocalPosition: {x: -5.05999994, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11410092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 253
+    i1: 86
+    i2: 76
+    i3: 187
+    i4: 106
+    i5: 218
+    i6: 173
+    i7: 4
+    i8: 10
+    i9: 149
+    i10: 68
+    i11: 110
+    i12: 240
+    i13: 193
+    i14: 82
+    i15: 66
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &11427908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161510}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bb8a77f9c3d09e4181e51820fcc2638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chestnutGo: {fileID: 0}
+  fingerPointPrefab: {fileID: 0}
+--- !u!114 &11431670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e878c8ae43b493843bc191f2ecbc4479, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11467820
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 613a879d5330ca84f921670e3484b8ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 0}
+  lerpRate: 15
 --- !u!212 &21294716
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -71,6 +144,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
