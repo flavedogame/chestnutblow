@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
+//MainGame: UI Canvas
 public class UIFunction : MonoBehaviour {
 
     public GameObject pauseMenu;
@@ -44,6 +45,6 @@ public class UIFunction : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
+        updateScore((int)Time.time );
 	}
 }

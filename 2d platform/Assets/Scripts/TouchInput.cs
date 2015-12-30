@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 
+//MainGame: Main Camera
 public class TouchInput : NetworkBehaviour {
 
     public GameObject chestnutGo;
