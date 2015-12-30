@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//MainGame background {repeatBackground, Quad}
 public class BackGroundRepeat : MonoBehaviour {
 
     public float scrollSpeed;
