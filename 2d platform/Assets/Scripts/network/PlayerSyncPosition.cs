@@ -45,6 +45,7 @@ public class PlayerSyncPosition : NetworkBehaviour {
 
     [ClientCallback]
     void TransmitPosition() {
+        //check flip and active to see if need to call the command
         if (isLocalPlayer)
         {
             CmdProvidePositionToServer(myTransform.position,GetComponent<TouchInput>().isActive);

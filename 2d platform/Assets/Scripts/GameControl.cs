@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 //MainGame GameController
-public class GameControl : MonoBehaviour {
+public class GameControl : NetworkBehaviour {
 
     public GameObject[] hazards;
     public Vector3 spawnValues;
@@ -17,7 +18,7 @@ public class GameControl : MonoBehaviour {
     private bool restart;
     private int score;
 
-    void Start()
+    public override void OnStartServer()
     {
         gameOver = false;
         restart = false;
@@ -48,7 +49,8 @@ public class GameControl : MonoBehaviour {
                     Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x, spawnValues.x), -spawnValues.y, spawnValues.z);
                     Quaternion spawnRotation = Quaternion.identity;
                     //make a pool
-                    Instantiate(hazard, spawnPosition, spawnRotation);
+                    GameObject go = Instantiate(hazard, spawnPosition, spawnRotation) as GameObject ;
+                    NetworkServer.Spawn(go);
                 }
                 else //bird 
                 {
